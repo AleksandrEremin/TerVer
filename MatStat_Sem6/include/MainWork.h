@@ -18,12 +18,14 @@ public:
     double R = 0;                   // Размах выбора;
 
     std::map<int, int> values;      // map - хранит (ключ (значение), значение(число повторений));
+    std::map<int, int> values_TP;
     std::vector <int> set;       // Храние все n значений, сортируется;
 
 
     MainWork(int n,double P_);
     int searchSV();   // Функция розыгрыша;
     void CastValue();  // Розыграть n раз;
+    void CastValuePT();
 
     void getE();
     void getx_();
@@ -36,6 +38,8 @@ public:
     std::map<int, int>::iterator GetIt() {return values.begin();}
     std::map<int, int>::iterator GetItEnd() {return values.end();}
 
+    std::map<int, int>::iterator GetItTP() {return values_TP.begin();}
+    std::map<int, int>::iterator GetItEndTP() {return values_TP.end();}
 
 };
 

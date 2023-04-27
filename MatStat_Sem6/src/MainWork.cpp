@@ -60,6 +60,18 @@ void MainWork::getR()
     R = set[n - 1] - set[0];
 }
 
+void MainWork::CastValuePT()
+{
+    double  PT = P;
+    int i = 1;
+    while(PT > 0.001)
+    {
+        values_TP[i] = 1;
+        PT = P * (pow((1 - P), i));
+        i++;
+    }
+}
+
 
 int MainWork::searchSV() //«разыграть» значение;
 {
@@ -94,6 +106,7 @@ void MainWork::CastValue()
         values[sv] += 1;
         set[i] = sv;
     }
+    CastValuePT();
     sort(set.begin(), set.end());
     getE();
     getx_();
